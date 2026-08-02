@@ -40,13 +40,13 @@ local palette = {
 
 	strfg = hsluv(249, 35, 60), -- #6BA1E6
 
-	addbg = blue,
-	modbg = accent2,
-	delbg = hsluv(6, 71, 46), -- #C53B53
+	addbg = hsluv(247, 60, 17),
+	modbg = hsluv(245, 60, 14),
+	delbg = hsluv(340, 28, 16),
 
-	addfg = hsluv(95, 14, 70), -- #AAAD9E
-	modfg = hsluv(325, 24, 70), -- #C2A2B7
-	delfg = hsluv(10, 25, 70), -- #C5A3A4
+	addfg = blue,
+	modfg = accent2,
+	delfg = hsluv(6, 71, 46), -- #C53B53
 
 	warningbg = hsluv(30, 55, 14),
 	infobg = hsluv(205, 45, 15),
