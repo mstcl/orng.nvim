@@ -141,12 +141,12 @@ local spec = lush(function(injected_functions)
 		FloatShadow { bg = "black", blend = 80 },
 		FloatShadowThrough { bg = "black", blend = 100 },
 
-		IncSearch { gui = "reverse" },
-		Cursor { IncSearch },
-		MatchParen { bg = "NONE", fg = "NONE", gui = "underline", sp = palette.fg3 },
-		Search { IncSearch },
-		Substitute { IncSearch },
-		CurSearch { bg = palette.infobg },
+		Cursor { gui = "reverse" },
+		MatchParen { bg = palette.errorbg, fg = palette.accent },
+		Search { bg = palette.warningbg, fg = palette.yellow },
+		Substitute { Search },
+		CurSearch { bg = palette.yellow, fg = palette.bg1 },
+		IncSearch { CurSearch },
 
 		Visual { bg = palette.bg2 },
 		VisualNOS { Visual },
