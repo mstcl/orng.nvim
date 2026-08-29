@@ -11,7 +11,7 @@ local spec = lush(function(injected_functions)
 		Terminal { bg = Normal.bg, fg = Normal.fg },
 		TermCursor { gui = "reverse" },
 
-		StatusLine { fg = Normal.fg },
+		StatusLine { fg = palette.fg2 },
 		StatusLineNC { fg = palette.fg2 },
 		StatusLineTermNC { StatusLineNC },
 		StatusLineTerm { StatusLine },
@@ -409,11 +409,11 @@ local spec = lush(function(injected_functions)
 		sym("@lsp.typemod.enumMember.defaultLibrary.terraform") { fg = palette.red, gui = "bold" },
 
 		-- diagnostic
-		DiagnosticWarn { Warning },
-		DiagnosticInfo { Info },
-		DiagnosticHint { Hint },
-		DiagnosticError { Error },
-		DiagnosticOk { MsgArea },
+		DiagnosticSignWarn { Warning },
+		DiagnosticSignInfo { Info },
+		DiagnosticSignHint { Hint },
+		DiagnosticSignError { Error },
+		DiagnosticSignOk { MsgArea },
 		DiagnosticUnnecessary { sp = palette.fg2, gui = "underdotted" },
 
 		DiagnosticFloatingWarn { WarningMsg },
@@ -428,11 +428,11 @@ local spec = lush(function(injected_functions)
 		DiagnosticUnderlineError { SpellBad },
 		DiagnosticUnderlineOk { sp = palette.green, gui = "undercurl" },
 
-		DiagnosticSignWarn { WarningMsg },
-		DiagnosticSignInfo { InfoMsg },
-		DiagnosticSignHint { HintMsg },
-		DiagnosticSignError { ErrorMsg },
-		DiagnosticSignOk { MoreMsg },
+		DiagnosticWarn { WarningMsg },
+		DiagnosticInfo { InfoMsg },
+		DiagnosticHint { HintMsg },
+		DiagnosticError { ErrorMsg },
+		DiagnosticOk { MoreMsg },
 
 		DiagnosticVirtualTextWarn { WarningMsg },
 		DiagnosticVirtualTextInfo { InfoMsg },
@@ -445,11 +445,6 @@ local spec = lush(function(injected_functions)
 		DiagnosticVirtualLinesHint { HintMsg },
 		DiagnosticVirtualLinesError { ErrorMsg },
 		DiagnosticVirtualLinesOk { MoreMsg },
-
-		LspDiagnosticsSignWarning { DiagnosticSignWarn },
-		LspDiagnosticsSignInformation { DiagnosticSignInfo },
-		LspDiagnosticsSignHint { DiagnosticSignHint },
-		LspDiagnosticsSignError { DiagnosticSignError },
 
 		-- lsp extras
 		LspInfoFiletype {},
