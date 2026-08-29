@@ -19,51 +19,8 @@ local spec = lush(function()
 		AerialBooleanIcon { base.Boolean },
 		AerialMethodIcon { base.Boolean },
 
-		-- arrow.nvim
-		ArrowAction { fg = palette.green},
-		ArrowCurrentFile { fg = palette.fg1, gui = "bold" },
-		ArrowFileIndex { base.Constant },
-
 		-- codediff.nvim
 		CodeDiffHistoryTitle { fg = palette.fg4, gui = "bold" },
-
-		-- nvim-biscuits
-		BiscuitColor { base.NonText },
-
-		-- barbar.nvim/bufferline.nvim
-		BufferTabpages { base.TabLine },
-		BufferSpaceSeparator { bg = base.TabLine.bg, fg = base.TabLine.bg },
-		BufferTypeSeparator { BufferSpaceSeparator },
-
-		BufferInactiveTarget { bg = palette.bg1, fg = palette.magenta, gui = "underline,reverse" },
-		BufferVisibleTarget { BufferInactiveTarget },
-		BufferAlternateTarget { BufferInactiveTarget },
-
-		BufferInactiveSign { BufferSpaceSeparator },
-		BufferVisibleSign { BufferInactiveSign },
-		BufferAlternateSign { BufferInactiveSign },
-
-		BufferInactiveSignRight { BufferInactiveSign },
-		BufferVisibleSignRight { BufferInactiveSign },
-		BufferAlternateSignRight { BufferInactiveSign },
-
-		BufferInactiveIndex { bg = base.TabLine.bg, fg = palette.fg4 },
-		BufferVisibleIndex { BufferInactiveIndex },
-		BufferAlternateIndex { BufferInactiveIndex },
-
-		BufferInactive { bg = base.TabLine.bg, fg = palette.fg3 },
-		BufferVisible { BufferInactive },
-		BufferAlternate { BufferInactive },
-
-		BufferInactiveMod { BufferInactive },
-
-		BufferCurrent { bg = palette.bg1, fg = palette.fg2},
-		BufferCurrentERROR { bg = BufferCurrent.bg, fg = palette.magenta },
-		BufferCurrentSign { bg = BufferCurrent.bg, fg = BufferCurrent.bg },
-		BufferCurrentSignRight { bg = BufferCurrent.bg, fg = BufferCurrent.bg },
-		BufferCurrentMod { bg = BufferCurrent.bg, fg = palette.red },
-		BufferCurrentIndex { bg = BufferCurrent.bg, fg = palette.fg4},
-		BufferCurrentTarget { BufferCurrent },
 
 		-- nvim-cmp
 		CmpWindowScrollThumb { fg = palette.fg4 },
@@ -146,125 +103,11 @@ local spec = lush(function()
 		BlinkCmpGhostText { base.Comment },
 		BlinkCmpSignatureHelpBorder { base.FloatBorder },
 
-		-- nvim-dap
-		DapBreakpointRejected { bg = palette.errorbg, fg = palette.accent },
-		DapStopped { bg = palette.addbg, fg = palette.green },
-		DapLogPoint { bg = palette.warningbg, fg = palette.cyan },
-		DapBreakpointCondition { bg = palette.hintbg, fg = palette.magenta },
-		DapBreakpoint { bg = palette.modbg, fg = palette.red },
-		NvimDapVirtualTextChanged { base.Keyword },
-		NvimDapVirtualText { base.Comment },
-		NvimDapSubtleFrame { base.Comment },
-
-		-- nvim-dap-ui
-		DapUISource { base.Keyword },
-		DapUIVariable { base.Normal },
-		DapUIValue { base.Normal },
-		DapUIFrameName { base.Normal },
-
-		DapUIScope { fg = palette.blue },
-		DapUIType { DapUIScope },
-		DapUIDecoration { DapUIScope },
-		DapUIStoppedThread { DapUIScope },
-		DapUILineNumber { DapUIScope },
-		DapUIFloatBorder { DapUIScope },
-
-		DapUIBreakpointsCurrentLine { gui = "bold" },
-		DapUIBreakpointsInfo { fg = palette.green },
-		DapUIWatchesError { fg = palette.red },
-		DapUIWatchesValue { fg = palette.green },
-		DapUIWatchesEmpty { fg = palette.magenta },
-		DapUIThread { fg = palette.green },
-		DapUIModifiedValue { gui = "bold" },
-
-		DapUIBreakpointsPath { DapLogPoint },
-
-		-- diffview.nvim
-		DiffviewDiffDeleteDim { base.NonText },
-		DiffviewStatusAdded { fg = palette.addfg },
-		DiffviewStatusUntracked { base.Question },
-		DiffviewStatusModified { fg = palette.modfg },
-		DiffviewStatusUnmerged { fg = palette.modfg },
-		DiffviewStatusTypeChange { fg = palette.modfg },
-		DiffviewStatusCopied { fg = palette.modfg },
-		DiffviewStatusRenamed { fg = palette.modfg },
-		DiffviewStatusDeleted { fg = palette.modfg },
-		DiffviewStatusUnknown { fg = palette.modfg },
-		DiffviewStatusBroken { fg = palette.modfg },
-		DiffviewFilePanelInsertions { fg = palette.modfg },
-		DiffviewFilePanelDeletions { fg = palette.delfg },
-		DiffviewFilePanelSelected { gui = "bold" },
-		DiffviewFilePanelTitle { fg = palette.red, gui = "bold" },
-		DiffviewFilePanelCounter { fg = base.Normal.fg },
-		DiffviewFilePanelRootPath { fg = palette.fg4, gui = "bold" },
-
-		-- dressing.nvim
-		DressingSelectIdx { base.Special },
-
-		-- flash.nvim
-		FlashLabel { bg = palette.infobg, fg = palette.blue },
-		FlashPromptIcon { bg = palette.delfg, fg = palette.bg2, gui = "bold" },
-		FlashBackdrop { fg = palette.fg4 },
-
-		-- vim-floaterm
-		Floaterm { bg = palette.bg2, fg = base.Normal.fg },
-
 		-- gitsigns.nvim
 		GitSignsAdd { base.DiffTextAdded },
 		GitSignsChange { base.DiffTextChanged },
 		GitSignsDelete { base.DiffTextRemoved },
 		GitSignsCurrentLineBlame { base.LineNr },
-
-		-- incline.nvim
-		InclineNormalNC { bg = palette.bg2, fg = palette.fg3, gui = "bold" },
-		InclineNormal { bg = palette.cyan, fg = palette.bg1, gui = "bold" },
-
-		-- mason.nvim
-		MasonHeader { bg = base.Normal.fg, fg = palette.bg2, gui = "bold" },
-		MasonHeaderSecondary { bg = palette.cyan, fg = palette.bg2, gui = "bold" },
-		MasonHighlight { fg = palette.cyan },
-		MasonHighlightBlock { bg = palette.blue, fg = palette.bg2 },
-		MasonHighlightBlockBold { bg = palette.blue, fg = palette.bg2, gui = "bold" },
-		MasonHighlightSecondary { fg = palette.fg1 },
-		MasonHighlightBlockSecondary { bg = MasonHighlightSecondary.fg, fg = MasonHighlightBlock.fg },
-		MasonHighlightBlockBoldSecondary { bg = MasonHighlightSecondary.fg, fg = MasonHighlightBlock.fg, gui = "bold" },
-		MasonMuted { fg = MasonHighlightSecondary.fg },
-		MasonMutedBlock { bg = palette.bg3, fg = MasonHighlightSecondary.fg },
-		MasonMutedBlockBold { bg = palette.bg3, fg = MasonHighlightSecondary.fg, gui = "bold" },
-
-		-- modes.nvim
-		ModesVisual { bg = palette.blue },
-		ModesDelete { bg = palette.accent },
-		ModesInsert { bg = palette.cyan },
-
-		ModesCopy { bg = palette.magenta },
-		ModesCopyCursorLine { bg =  palette.modbg },
-		ModesCopyCursorLineNr { bg =  palette.modbg },
-		ModesCopyCursorLineSign { bg =  palette.modbg },
-		ModesCopyCursorLineFold { bg =  palette.modbg },
-
-		ModesDeleteCursorLine { bg = palette.hintbg },
-		ModesDeleteCursorLineNr { bg = palette.hintbg },
-		ModesDeleteCursorLineSign { bg = palette.hintbg },
-		ModesDeleteCursorLineFold { bg = palette.hintbg },
-
-		ModesInsertCursorLine { bg = palette.bg3 },
-		ModesInsertCursorLineNr { bg = palette.bg3 },
-		ModesInsertCursorLineSign { bg = palette.bg3 },
-		ModesInsertCursorLineFold { bg = palette.bg3 },
-
-		ModesVisualCursorLine { bg = palette.infobg},
-		ModesVisualCursorLineNr { bg = palette.infobg },
-		ModesVisualCursorLineSign { bg = palette.infobg },
-		ModesVisualCursorLineFold { bg = palette.infobg },
-
-		ModesInsertModeMsg { fg = palette.cyan},
-		ModesVisualModeMsg { fg = palette.blue },
-		ModesVisualVisual { bg = palette.infobg },
-
-		-- nvim-navic
-		NavicSeparator { fg = palette.fg4 },
-		NavicText { base.StatusLineNC },
 
 		-- neogit
 		NeogitHunkHeaderCursor { bg = palette.bg1, fg = palette.accent, gui = "bold" },
@@ -297,140 +140,9 @@ local spec = lush(function()
 
 		NeogitFloatBorder { base.FloatBorder },
 
-		-- noice.nvim
-		NoiceCursor { bg = palette.blue, fg = palette.infobg },
-		NoiceCmdline { base.StatusLine },
-		NoiceVirtualText { bg = palette.addbg, fg = palette.green },
-		NoicePopup { base.Pmenu },
-		NoiceMini { base.Pmenu },
-		NoiceCompletionItemKindFolder {},
-		NoiceCompletionItemKindDefault {},
-		NoiceCompletionItemKindText {},
-		NoiceCompletionItemKindEnumMember {},
-		NoiceCompletionItemKindUnit {},
-		NoiceCompletionItemKindField {},
-		NoiceCompletionItemKindFile {},
-		NoiceCompletionItemKindVariable {},
-		NoiceCompletionItemKindEnum {},
-		NoiceCompletionItemKindColor {},
-		NoiceCmdlinePopupBorderHelp {},
-		NoiceCmdlinePopupBorder {},
-		NoiceCmdlineIconCalculator {},
-		NoiceCmdlinePopupBorderCalculator {},
-		NoiceCmdlineIconLua {},
-		NoiceCmdlinePopupBorderLua {},
-		NoiceCmdlineIconInput {},
-		NoiceCmdlinePopupBorderInput {},
-		NoiceCmdlineIconHelp {},
-		NoiceCmdlinePopupBorderFilter {},
-		NoiceCmdlineIconCmdline {},
-		NoiceCmdlinePopupBorderCmdline {},
-		NoiceLspProgressClient {},
-		NoiceLspProgressSpinner {},
-		NoiceFormatLevelError {},
-		NoiceFormatLevelWarn {},
-		NoiceFormatLevelInfo {},
-		NoiceFormatLevelOff {},
-		NoiceFormatLevelTrace {},
-		NoiceFormatLevelDebug {},
-		NoiceFormatTitle {},
-		NoiceFormatConfirmDefault {},
-		NoiceFormatConfirm {},
-		NoiceFormatDate {},
-		NoiceFormatKind {},
-		NoiceFormatEvent {},
-		NoiceFormatProgressTodo {},
-		NoiceFormatProgressDone { gui = "reverse" },
-		NoiceSplitBorder {},
-		NoiceSplit {},
-		NoiceCompletionItemKindKeyword {},
-		NoiceScrollbarThumb {},
-		NoiceCompletionItemKindModule {},
-		NoiceScrollbar {},
-		NoiceCompletionItemKindConstructor {},
-		NoicePopupmenuSelected {},
-		NoicePopupmenuMatch {},
-		NoicePopupmenuBorder {},
-		NoiceCompletionItemKindClass {},
-		NoicePopupmenu {},
-		NoicePopupBorder {},
-		NoiceCmdlineIconFilter {},
-		NoiceConfirmBorder {},
-		NoiceConfirm {},
-		NoiceCmdlinePopupBorderSearch {},
-		NoiceCmdlinePopupTitle {},
-		NoiceCmdlinePopup {},
-		NoiceCompletionItemKindMethod {},
-		NoiceCompletionItemKindFunction {},
-		NoiceCompletionItemKindInterface {},
-		NoiceCompletionItemKindStruct {},
-		NoiceLspProgressTitle {},
-		NoiceCompletionItemKindValue {},
-		NoiceCompletionItemKindProperty {},
-		NoiceCompletionItemKindConstant {},
-		NoiceCompletionItemKindSnippet {},
-		NoiceHiddenCursor { blend = 100, gui = "nocombine" },
-
-		-- nvim-notify
-		NotifyBackground { base.Pmenu },
-
-		NotifyINFOBody { bg = palette.bg2, fg = base.Normal.fg },
-		NotifyERRORBody { NotifyINFOBody },
-		NotifyTRACEBody { NotifyINFOBody },
-		NotifyWARNBody { NotifyINFOBody },
-
-		NotifyERRORIcon { bg = palette.bg2, fg = palette.accent },
-		NotifyERRORTitle { NotifyERRORIcon },
-
-		NotifyINFOIcon { bg = palette.bg2, fg = palette.blue },
-		NotifyINFOTitle { NotifyINFOIcon },
-
-		NotifyWARNIcon { bg = palette.bg2, fg = palette.yellow },
-		NotifyWARNTitle { NotifyWARNIcon },
-
-		NotifyTRACEIcon { bg = palette.bg2, fg = palette.magenta },
-		NotifyTRACETitle { NotifyTRACEIcon },
-
-		NotifyINFOBorder { bg = palette.bg2, fg = palette.bg2 },
-		NotifyERRORBorder { NotifyINFOBorder },
-		NotifyWARNBorder { NotifyINFOBorder },
-		NotifyTRACEBorder { NotifyINFOBorder },
-
-		-- null-ls/none-ls
-		NullLsInfoSources {},
-		NullLsInfoBorder {},
-		NullLsInfoTitle {},
-		NullLsInfoHeader {},
-
-		-- nvim-tree
-		NvimTreeFolderIcon { fg = palette.fg2 },
-		NvimTreeFolderName { fg = palette.fg2 },
-		NvimTreeOpenedFolderName { fg = palette.fg0 },
-		NvimTreeIndentMarker { fg = palette.bg2 },
-		NvimTreeFolderArrowClosed { base.LineNr },
-		NvimTreeFolderArrowOpen { base.LineNr },
-		NvimTreeRootFolder { fg = palette.fg4 },
-		NvimTreeEmptyFolderName { fg = palette.fg4 },
-		NvimTreeSymlinkFolderName { fg = palette.fg2 },
-		NvimTreeHiddenFileHL { fg = palette.fg4 },
-		NvimTreeModifiedFile { fg = palette.accent },
-
 		-- oil
 		OilDir { fg = palette.fg2 },
 		OilHidden { fg = palette.fg4 },
-
-		-- mini.files
-		MiniFilesDirectory { fg = palette.fg2 },
-		MiniFilesFile { fg = palette.fg0 },
-
-		-- rainbow-delimiters.nvim
-		RainbowDelimiterRed { fg = palette.red },
-		RainbowDelimiterYellow { fg = palette.yellow },
-		RainbowDelimiterBlue { fg = palette.blue },
-		RainbowDelimiterOrange { fg = palette.yellow },
-		RainbowDelimiterGreen { fg = palette.green },
-		RainbowDelimiterViolet { fg = palette.magenta },
-		RainbowDelimiterCyan { fg = palette.cyan },
 
 		-- render-markdown.nvim
 		RenderMarkdownH1 { base.Function },
@@ -442,15 +154,6 @@ local spec = lush(function()
 		RenderMarkdownUnchecked { base.Delimiter },
 		RenderMarkdownChecked { base.Delimiter },
 		RenderMarkdownTodo { base.Delimiter },
-
-		-- resolve.nvim
-		ResolveSeparatorMarker { bg = palette.bg1 },
-		ResolveOursMarker { fg = base.DiffAdd.bg, bg = palette.green, gui = "bold" },
-		ResolveOursSection { fg = base.DiffAdd.fg, bg = base.DiffAdd.bg },
-		ResolveTheirsMarker { fg = base.DiffChange.bg, bg = palette.magenta, gui = "bold" },
-		ResolveTheirsSection { fg = base.DiffChange.fg, bg = base.DiffChange.bg },
-		ResolveAncestorMarker { fg = base.DiffText.bg, bg = palette.fg2, gui = "bold" },
-		ResolveAncestorSection { fg = base.DiffText.fg, bg = base.DiffText.bg },
 
 		-- fzf-lua
 		FzfLuaLivePrompt { fg = palette.blue },
@@ -523,40 +226,9 @@ local spec = lush(function()
 		TelescopeFrecencyScores {},
 		TelescopeQueryFilter {},
 
-		-- treesitter extras
-		TSPlaygroundFocus {},
-		TSPlaygroundLang {},
-		TSQueryLinterError {},
-
 		-- nvim-treesitter-context
 		TreesitterContext { base.CursorLine },
 		TreesitterContextLineNumber { base.CursorLine },
-
-		-- trouble.nvim
-		TroubleCount { fg = palette.yellow, gui = "undercurl" },
-		TroubleSource { base.Comment },
-		TroubleCode { base.Comment },
-		TroubleNormal { bg = palette.bg1, fg = base.Normal.fg },
-		TroubleSignHint { lsp.DiagnosticSignHint },
-		TroubleSignInformation { lsp.DiagnosticSignInfo },
-		TroubleSignWarning { lsp.DiagnosticSignWarn },
-		TroubleSignError { lsp.DiagnosticSignError },
-		TroubleText { base.Normal },
-		TroublePreview { base.Search },
-		TroubleFile { base.Directory },
-
-		-- nvim-ufo
-		UfoFoldedBg { bg = base.Folded.bg },
-		UfoPreviewWinBar { UfoFoldedBg },
-		UfoFoldedFg { fg = base.Normal.fg },
-		UfoFoldedEllipsis { base.Comment },
-		UfoCursorFoldedLine { UfoFoldedBg },
-		UfoPreviewThumb { base.PmenuThumb },
-		UfoPreviewSbar { base.PmenuSbar },
-		UfoPreviewCursorLine { base.Visual },
-
-		-- visual-whitespace.nvim
-		VisualNonText { bg = base.Visual.bg, fg = base.TabLine.bg },
 	}
 end)
 return spec

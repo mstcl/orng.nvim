@@ -7,6 +7,10 @@ local palette = require("orng.palette")
 -- stylua: ignore start
 local spec = lush(function()
 	return {
+		-- mini.files
+		MiniFilesDirectory { fg = palette.fg2 },
+		MiniFilesFile { fg = palette.fg0 },
+
 		-- mini.clue
 		MiniClueTitle { base.Label },
 		MiniClueSeparator { base.FloatBorder },
@@ -40,6 +44,16 @@ local spec = lush(function()
 		MiniStarterItemPrefix { MiniStarterCurrent },
 		MiniStarterFooter { MiniStarterHeader },
 		MiniStarterItem { base.Comment },
+
+		-- mini.icons
+		MiniIconsBlue { fg = palette.blue },
+		MiniIconsCyan { fg = palette.magenta },
+		MiniIconsOrange { fg = palette.yellow },
+		MiniIconsRed { fg = palette.red },
+		MiniIconsYellow { fg = palette.yellow },
+		MiniIconsPurple { fg = palette.magenta },
+		MiniIconsGreen { fg = palette.green },
+		MiniIconsAzure { fg = palette.blue },
 	}
 end)
 
