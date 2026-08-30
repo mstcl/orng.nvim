@@ -226,10 +226,6 @@ local spec = lush(function()
 		TelescopePathSeparator {},
 		TelescopeFrecencyScores {},
 		TelescopeQueryFilter {},
-
-		-- nvim-treesitter-context
-		TreesitterContext { base.CursorLine },
-		TreesitterContextLineNumber { base.CursorLine },
 	}
 end)
 return spec
