@@ -36,7 +36,7 @@ local spec = lush(function(injected_functions)
 		TabLineSel { bg = palette.bg0, fg = palette.fg2 },
 		TabLineFill { bg = TabLine.bg },
 
-		WinBar { bg = palette.bg1 },
+		WinBar { bg = palette.bg0 },
 		WinBarNC { WinBar, fg = palette.fg2 },
 
 		Folded { bg = palette.bg1 , fg = palette.fg5 },
