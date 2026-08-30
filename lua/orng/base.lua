@@ -37,7 +37,7 @@ local spec = lush(function(injected_functions)
 		TabLineFill { bg = TabLine.bg },
 
 		WinBar { bg = palette.bg1 },
-		WinBarNC { WinBar },
+		WinBarNC { WinBar, fg = palette.fg2 },
 
 		Folded { bg = palette.bg1 , fg = palette.fg5 },
 		FoldColumn { fg = Folded.fg, gui = "bold" },
