@@ -102,6 +102,7 @@ local spec = lush(function()
 		-- blink.cmp
 		BlinkCmpGhostText { base.Comment },
 		BlinkCmpSignatureHelpBorder { base.FloatBorder },
+		BlinkCmpDocBorder { base.FloatBorder },
 
 		-- gitsigns.nvim
 		GitSignsAdd { base.DiffTextAdded },

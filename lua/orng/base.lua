@@ -22,7 +22,7 @@ local spec = lush(function(injected_functions)
 		WinSeparator { VertSplit },
 
 		CursorLine { bg = palette.bg2 },
-		CursorLineNr { fg = palette.fg1, gui = "bold" },
+		CursorLineNr { fg = palette.fg1 },
 		CursorLineFold {},
 		CursorLineSign {},
 
@@ -409,10 +409,10 @@ local spec = lush(function(injected_functions)
 		sym("@lsp.typemod.enumMember.defaultLibrary.terraform") { fg = palette.red, gui = "bold" },
 
 		-- diagnostic
-		DiagnosticSignWarn { Warning },
-		DiagnosticSignInfo { Info },
-		DiagnosticSignHint { Hint },
-		DiagnosticSignError { Error },
+		DiagnosticSignWarn { WarningMsg },
+		DiagnosticSignInfo { InfoMsg },
+		DiagnosticSignHint { HintMsg },
+		DiagnosticSignError { ErrorMsg },
 		DiagnosticSignOk { MsgArea },
 		DiagnosticUnnecessary { sp = palette.fg2, gui = "underdotted" },
 
