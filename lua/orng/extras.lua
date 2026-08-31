@@ -111,6 +111,8 @@ local spec = lush(function()
 		GitSignsCurrentLineBlame { base.LineNr },
 
 		-- neogit
+		NeogitActiveItem { bg = palette.bg2 },
+
 		NeogitHunkHeaderCursor { bg = palette.bg1, fg = palette.accent, gui = "bold" },
 		NeogitHunkHeaderHighlight { NeogitHunkHeaderCursor },
 		NeogitHunkHeader { bg = palette.bg2, fg = palette.fg4 },
