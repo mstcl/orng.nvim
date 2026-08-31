@@ -110,8 +110,8 @@ local spec = lush(function(injected_functions)
 
 		Number { fg = palette.red },
 		Float { Number },
-		Type { fg=  palette.accent },
-		Label { fg = Number.accent, gui = "bold" },
+		Type { fg=  palette.accent2 },
+		Label { fg = Number.accent2, gui = "bold" },
 		Exception { fg = palette.fg2 },
 		Include { fg = palette.fg4 },
 
@@ -119,8 +119,8 @@ local spec = lush(function(injected_functions)
 		Repeat { Statement },
 		SpecialChar { fg = palette.fg2 },
 		Conditional { fg = palette.fg2 },
-		PreCondit { fg = palette.accent },
-		Typedef { fg = palette.accent },
+		PreCondit { fg = palette.accent2 },
+		Typedef { fg = palette.accent2 },
 
 		Constant { fg = palette.blue },
 		Boolean { fg = palette.blue },
@@ -130,9 +130,9 @@ local spec = lush(function(injected_functions)
 
 		Macro { fg = palette.blue },
 
-		PreProc { fg = palette.accent },
+		PreProc { fg = palette.accent2 },
 
-		Special { fg = palette.accent, gui = "bold" },
+		Special { fg = palette.accent2, gui = "bold" },
 
 		NormalFloat { bg = Normal.bg, fg = palette.fg1 },
 		FloatBorder { bg = Normal.bg, fg = palette.bg2 },
