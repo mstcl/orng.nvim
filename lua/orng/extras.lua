@@ -180,6 +180,11 @@ local spec = lush(function()
 		TelescopePathSeparator {},
 		TelescopeFrecencyScores {},
 		TelescopeQueryFilter {},
+
+		-- vim-illuminate
+		IlluminatedWordText { sp = palette.fg0, gui = "underline" },
+		IlluminatedWordRead { IlluminatedWordText },
+		IlluminatedWordWrite { IlluminatedWordText },
 	}
 end)
 return spec
