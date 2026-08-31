@@ -384,6 +384,7 @@ local spec = lush(function(injected_functions)
 		sym("@lsp.typemod.string.injected") { sym("@string") },
 		sym("@lsp.typemod.variable.injected") { sym("@variable") },
 		sym("@lsp.typemod.function.definition") { Function },
+		sym("@lsp.typemod.class.definition") { StorageClass },
 		sym("@lsp.typemod.variable.definition") { fg = palette.accent2 },
 		sym("@lsp.typemod.parameter.definition") { fg = palette.accent2 },
 
