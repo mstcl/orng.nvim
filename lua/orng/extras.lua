@@ -56,12 +56,6 @@ local spec = lush(function()
 		GitSignsDelete { base.DiffTextRemoved },
 		GitSignsCurrentLineBlame { base.LineNr },
 
-		-- gitsigns.nvim
-		GitSignsAdd { base.DiffTextAdded },
-		GitSignsChange { base.DiffTextChanged },
-		GitSignsDelete { base.DiffTextRemoved },
-		GitSignsCurrentLineBlame { base.LineNr },
-
 		-- neogit
 		NeogitActiveItem { bg = palette.bg2 },
 

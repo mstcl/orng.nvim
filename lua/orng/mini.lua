@@ -11,6 +11,9 @@ local spec = lush(function()
 		MiniFilesDirectory { fg = palette.fg2 },
 		MiniFilesFile { fg = palette.fg0 },
 
+		-- mini.jump
+		MiniJump { base.MatchParen },
+
 		-- mini.clue
 		MiniClueTitle { base.Label },
 		MiniClueSeparator { base.FloatBorder },
