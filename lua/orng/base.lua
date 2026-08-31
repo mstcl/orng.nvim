@@ -361,6 +361,7 @@ local spec = lush(function(injected_functions)
 		sym("@lsp.type.lifetime") { sym("@keyword.modifier") },
 		sym("@lsp.type.generic") { sym("@variable") },
 		sym("@lsp.type.selfKeyword") { sym("@variable.builtin") },
+		sym("@lsp.type.selfParameter") { Identifier },
 		sym("@lsp.type.selfTypeKeyword") { sym("@variable.builtin") },
 		sym("@lsp.type.deriveHelper") { sym("@attribute") },
 		sym("@lsp.type.modifier") { sym("@keyword.modifier") },
