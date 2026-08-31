@@ -187,14 +187,14 @@ local spec = lush(function(injected_functions)
 		sym("@string") { String },
 		sym("@string.documentation") { fg = palette.fg2 },
 		sym("@string.regexp") { fg = palette.green },
-		sym("@string.escape") { fg = palette.blue },
+		sym("@string.escape") { fg = palette.fg4 },
 		sym("@string.special") { SpecialChar },
 		sym("@string.special.symbol") { Special },
 		sym("@string.special.url") { fg = palette.green, gui = "underline" },
 		sym("@string.special.uri") { sym("@string.special.url") },
 
 		sym("@character") { Character },
-		sym("@character.printf") { fg = palette.accent, gui = "bold" },
+		sym("@character.printf") { fg = palette.fg4 },
 
 		sym("@boolean") { Boolean },
 		sym("@number") { Number },
