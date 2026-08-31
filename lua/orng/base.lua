@@ -73,7 +73,7 @@ local spec = lush(function(injected_functions)
 		DiffTextAdded { fg = palette.addfg },
 		DiffTextChanged { fg = palette.modfg },
 		DiffTextRemoved { fg = palette.delfg },
-		Todo { DiffDelete },
+		Todo { bg = palette.addbg, fg = palette.strfg },
 
 		Underlined { fg = palette.yellow, sp = palette.yellow, gui = "underline" },
 		Tag { Underlined },
@@ -96,7 +96,7 @@ local spec = lush(function(injected_functions)
 		Identifier { fg = Normal.fg },
 
 		String { fg = palette.strfg },
-		Define { fg = palette.accent },
+		Define { fg = palette.cream, gui = "bold" },
 		Character { fg = String.fg },
 		SpecialKey { Character },
 
@@ -104,31 +104,31 @@ local spec = lush(function(injected_functions)
 
 		Keyword { fg = palette.fg2 },
 
-		Comment { fg = palette.fg4, gui = "italic" },
-		Operator { fg = Comment.fg },
+		Comment { fg = palette.fg4 },
+		Operator { fg = palette.fg4 },
 		Title { gui = "bold" },
 
-		Number { fg = palette.fg1 },
+		Number { fg = palette.red },
 		Float { Number },
 		Type { fg=  palette.accent },
 		Label { fg = Number.accent, gui = "bold" },
-		Exception { fg = palette.accent, gui = "bold" },
-		Include { fg = palette.accent2, gui = "italic" },
+		Exception { fg = palette.fg2 },
+		Include { fg = palette.fg4 },
 
 		Statement { fg = palette.fg2 },
 		Repeat { Statement },
 		SpecialChar { fg = palette.fg2 },
-		Conditional { fg = palette.fg2  , gui = "italic" },
-		PreCondit { fg = palette.accent, gui = "italic" },
-		Typedef { fg = palette.accent, gui = "italic" },
+		Conditional { fg = palette.fg2 },
+		PreCondit { fg = palette.accent },
+		Typedef { fg = palette.accent },
 
-		Constant { fg = palette.fg1 },
-		Boolean { fg = palette.fg1 },
-		StorageClass { fg = Constant.fg, gui = "bold" },
+		Constant { fg = palette.blue },
+		Boolean { fg = palette.blue },
+		StorageClass { fg = palette.cream, gui = "bold" },
 		Directory { StorageClass },
 		Structure { StorageClass },
 
-		Macro { fg = palette.blue, gui = "italic" },
+		Macro { fg = palette.blue },
 
 		PreProc { fg = palette.accent },
 
@@ -148,7 +148,7 @@ local spec = lush(function(injected_functions)
 		CurSearch { bg = palette.yellow, fg = palette.bg1 },
 		IncSearch { CurSearch },
 
-		Visual { bg = palette.bg2 },
+		Visual { bg = palette.visbg },
 		VisualNOS { Visual },
 
 		RedrawDebugNormal { gui = "reverse" },
@@ -166,13 +166,13 @@ local spec = lush(function(injected_functions)
 		-- treesitter syntax
 		-- identifiers
 		sym("@variable") { Identifier },
-		sym("@variable.builtin") { fg = palette.accent },
+		sym("@variable.builtin") { Constant },
 		sym("@variable.parameter") { fg = palette.fg1 },
 		sym("@variable.member") { fg = palette.fg1 },
 
 		sym("@constant") { Constant },
 		sym("@constant.builtin") { Conditional },
-		sym("@constant.macro") { Define },
+		sym("@constant.macro") { Macro },
 
 		sym("@module") { fg = palette.fg1 },
 		sym("@module.builtin") { Directory },
@@ -201,58 +201,59 @@ local spec = lush(function(injected_functions)
 		sym("@number.float") { Float },
 
 		-- types
-		sym("@type") { Define },
+		sym("@type") {},
 		sym("@type.definition") { Define },
-		sym("@type.builtin") { Define },
+		sym("@type.builtin") {},
 
-		sym("@attribute") { fg = palette.accent2, gui = "italic" },
+		sym("@attribute") { fg = palette.fg0 },
 		sym("@attribute.builtin") { sym("@attribute") },
 
 		sym("@property") { fg = palette.fg1 },
 
 		-- function
-		sym("@function") { Function },
-		sym("@function.call") { Function },
-		sym("@function.macro") { ErrorMsg },
+		sym("@function") { fg = Function.fg },
+		sym("@function.call") {},
+		sym("@function.macro") { Macro },
 		sym("@function.method") { Function },
 		sym("@function.method.call") { sym("@function.call") },
-		sym("@function.builtin") { fg = palette.accent2, gui = "bold" },
+		sym("@function.builtin") {},
 
 		sym("@operator") { Operator },
-		sym("@constructor") { fg = palette.accent, gui = "bold" },
+		sym("@constructor") { fg = palette.fg0 },
 
 		-- keyword
 		sym("@keyword") { Keyword },
-		sym("@keyword.coroutine") { fg = palette.accent },
+		sym("@keyword.coroutine") { fg = Keyword.fg, gui = "bold" },
 		sym("@keyword.function") { sym("@keyword") },
 		sym("@keyword.operator") { sym("@operator") },
-		sym("@keyword.import") { fg = palette.accent2, gui = "italic" },
-		sym("@keyword.type") { fg = palette.accent2 },
-		sym("@keyword.modifier") { fg = palette.fg2 },
+		sym("@keyword.import") { sym("@operator") },
+		sym("@keyword.type") { sym("@keyword") },
+		sym("@keyword.modifier") { sym("@keyword") },
 		sym("@keyword.repeat") { sym("@keyword") },
-		sym("@keyword.return") { fg = palette.accent, gui = "bold" },
+		sym("@keyword.return") { sym("@keyword") },
 		sym("@keyword.debug") { Debug },
-		sym("@keyword.exception") { fg = palette.accent, gui = "italic" },
+		sym("@keyword.exception") { sym("@keyword") },
 		sym("@keyword.conditional") { sym("@keyword") },
 		sym("@keyword.storage") { fg = palette.fg2 },
 		sym("@keyword.directive") { fg = PreProc.fg },
 
 		-- punctuation
 		sym("@punctuation") { Delimiter },
-		sym("@punctuation.special") { fg = palette.fg3, gui = "bold" },
-		sym("@punctuation.delimiter") { Identifier },
+		sym("@punctuation.special") { Delimiter },
+		sym("@punctuation.delimiter") { Delimiter },
 		sym("@punctuation.bracket") { Conceal },
 
 		-- comment
-		sym("@comment") { Comment },
-		sym("@comment.documentation") { Comment },
-		sym("@comment.todo") { bg = palette.modbg, fg = palette.magenta },
-		sym("@comment.error") { fg = Error.fg, bg = Error.bg, gui = "bold" },
-		sym("@comment.warning") { fg = Warning.fg, bg = Warning.bg, gui = "bold" },
-		sym("@comment.hint") { fg = Hint.fg, bg = Hint.bg, gui = "bold" },
-		sym("@comment.info") { fg = Info.fg, bg = Info.bg, gui = "bold" },
-		sym("@comment.note") { fg = Info.fg, bg = Info.bg, gui = "bold" },
-		sym("@comment.ok") { fg = Info.fg, bg = Info.bg, gui = "bold" },
+		sym("@comment") {  fg = palette.yellow },
+		sym("@comment.documentation") { sym("@comment") },
+		sym("@comment.todo") { Todo },
+		sym("@comment.error") { fg = Error.fg, bg = Error.bg },
+		sym("@comment.warning") { fg = Warning.fg, bg = Warning.bg },
+		sym("@comment.hint") { fg = Hint.fg, bg = Hint.bg },
+		sym("@comment.info") { fg = Info.fg, bg = Info.bg },
+		sym("@comment.note") { fg = Info.fg, bg = Info.bg },
+		sym("@comment.ok") { fg = Info.fg, bg = Info.bg },
+		sym("@comment.gitcommit") { Comment },
 
 		-- org
 		sym("@org.headline.level6") { gui = "bold", fg = palette.cyan },
@@ -322,6 +323,7 @@ local spec = lush(function(injected_functions)
 
 		-- lua
 		sym("@variable.member.lua") { fg = palette.green },
+		sym("@constructor.lua") { Delimiter },
 
 		-- terraform
 		sym("@none.terraform") { Delimiter },
@@ -334,14 +336,14 @@ local spec = lush(function(injected_functions)
 		sym("@lsp.type.enum") { sym("@keyword.type") },
 		sym("@lsp.type.interface") { sym("@type") },
 		sym("@lsp.type.struct") { sym("@type") },
-		sym("@lsp.type.typeParameter") { sym("@type.definition") },
+		sym("@lsp.type.typeParameter") {},
 		sym("@lsp.type.parameter") { sym("@variable.parameter") },
 		sym("@lsp.type.variable") {},
 		sym("@lsp.type.property") { sym("@property") },
 		sym("@lsp.type.enumMember") { Constant },
 		sym("@lsp.type.event") { sym("@type") },
-		sym("@lsp.type.function") { sym("@function") },
-		sym("@lsp.type.method") { sym("@function") },
+		sym("@lsp.type.function") {},
+		sym("@lsp.type.method") {},
 		sym("@lsp.type.macro") { sym("@constant.macro") },
 		sym("@lsp.type.keyword") { sym("@keyword") },
 		sym("@lsp.type.comment") { sym("@comment") },
@@ -353,6 +355,7 @@ local spec = lush(function(injected_functions)
 		sym("@lsp.type.escapeSequence") { sym("@string.escape") },
 		sym("@lsp.type.formatSpecifier") { fg = palette.yellow },
 		sym("@lsp.type.builtinType") { sym("@type.builtin") },
+		sym("@lsp.type.builtinConstant") { sym("@variable.builtin") },
 		sym("@lsp.type.typeAlias") { sym("@type.definition") },
 		sym("@lsp.type.unresolvedReference") { gui = 'undercurl', sp = palette.accent },
 		sym("@lsp.type.lifetime") { sym("@keyword.modifier") },
@@ -371,22 +374,27 @@ local spec = lush(function(injected_functions)
 		sym("@lsp.typemod.struct.defaultLibrary") { sym("@type.builtin") },
 		sym("@lsp.typemod.enum.defaultLibrary") { sym("@type.builtin") },
 		sym("@lsp.typemod.enumMember.defaultLibrary") { sym("@constant.builtin") },
-		sym("@lsp.typemod.variable.readonly") { fg = palette.fg2 },
+		sym("@lsp.typemod.variable.readonly") {},
 		sym("@lsp.typemod.variable.callable") { sym("@function") },
-		sym("@lsp.typemod.variable.static") { sym("@constant") },
+		sym("@lsp.typemod.variable.static") {},
 		sym("@lsp.typemod.property.readonly") { fg = palette.fg2 },
 		sym("@lsp.typemod.keyword.async") { sym("@keyword.coroutine") },
 		sym("@lsp.typemod.keyword.injected") { sym("@keyword") },
 		sym("@lsp.typemod.operator.injected") { sym("@operator") },
 		sym("@lsp.typemod.string.injected") { sym("@string") },
 		sym("@lsp.typemod.variable.injected") { sym("@variable") },
+		sym("@lsp.typemod.function.definition") { Function },
+		sym("@lsp.typemod.variable.definition") { fg = palette.accent2 },
+		sym("@lsp.typemod.parameter.definition") { fg = palette.accent2 },
 
 		sym("@lsp.type.keyword") {},
 		sym("@lsp.type.string") {},
 		sym("@lsp.type.comment") {},
 
+		sym("@lsp.mod.documentation") { sym("@comment.documentation") },
+
 		-- lua
-		sym("@lsp.type.keyword.lua") { Function },
+		sym("@lsp.type.keyword.lua") {},
 		sym("@lsp.mod.static.lua") { gui = "bold" },
 		sym("@lsp.type.string.lua") { sym("@string.lua") },
 		sym("@lsp.type.class.lua") { Function },

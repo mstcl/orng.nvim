@@ -39,6 +39,7 @@ local palette = {
 	cyan = cyan,
 
 	strfg = hsluv(249, 35, 60), -- #6BA1E6
+	visbg = hsluv(247, 52, 11), -- #141E2B
 
 	addbg = hsluv(247, 60, 17),
 	modbg = hsluv(245, 60, 14),
